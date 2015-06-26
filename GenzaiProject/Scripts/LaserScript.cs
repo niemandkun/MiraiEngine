@@ -11,8 +11,16 @@ namespace GenzaiProject
 {
     class LaserScript : IActionScript, ICollisionScript
     {
-        private Vector2f velocity;
-        private ObjectID shooter;
+        Vector2f velocity;
+        ObjectID shooter;
+        Random rand = new Random();
+        int cameraShakeRatio = 10;
+
+        public LaserScript(Vector2f velocity, ObjectID shooter)
+        {
+            this.velocity = velocity;
+            this.shooter = shooter;
+        }
 
         public void ProcessLogic(IGameObject self, Scene world, KeyboardState keyboard)
         {
@@ -22,13 +30,19 @@ namespace GenzaiProject
         public void ProcessCollision(IGameObject self, Scene world, Collision collision)
         {
             var victim = collision.Subject;
-            if (victim.ID == (uint)ObjectID.Friendly) Explose(victim, world);
-            
+            if (victim.ID == (uint)ObjectID.Friendly) Explode(victim, world);
+
             if (victim.ID == (uint)ObjectID.Turret && shooter != ObjectID.Turret)
             {
                 var turretScript = victim.ActionScripts.FirstOrDefault() as TurretScript;
-                if (turretScript.Health-- == 0) Explose(victim, world);
+                if (turretScript.Health-- == 0) Explode(victim, world);
             }
+
+            if (victim.ID == (uint)ObjectID.Player && shooter != ObjectID.Player)
+                world.Camera.Body.Position += new Vector2f(
+                    rand.Next(-cameraShakeRatio, cameraShakeRatio),
+                    rand.Next(-cameraShakeRatio, cameraShakeRatio)
+                    );
 
             if (victim.ID != (uint)ObjectID.Laser && victim.ID != (uint)shooter
                 && victim.ID != (uint)ObjectID.Camera)
@@ -39,19 +53,13 @@ namespace GenzaiProject
             }
         }
 
-        public void Explose(IGameObject victim, Scene world)
+        public void Explode(IGameObject victim, Scene world)
         {
             world.Remove(victim);
             var expCenter = victim.Body.Incircle.Center;
             var bang = new Bang(expCenter);
             world.Particles.SpawnEmitter(bang.Emitter, bang.Timeout);
             world.Lights.SpawnLight(new Light(expCenter, new Vector2f(1.1f, 1.1f), LightMode.Backlight), bang.Timeout);
-        }
-
-        public LaserScript(Vector2f velocity, ObjectID shooter)
-        {
-            this.velocity = velocity;
-            this.shooter = shooter;
         }
     }
 }
