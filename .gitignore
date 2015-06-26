@@ -1,0 +1,8 @@
+GenzaiProject/bin
+MiraiEditor/bin
+MiraiEngine/bin
+GenzaiProject/obj
+MiraiEditor/obj
+MiraiEngine/obj
+*.swp
+GenzaiProject.v12.suo
