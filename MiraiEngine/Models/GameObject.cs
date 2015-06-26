@@ -71,15 +71,5 @@ namespace MiraiEngine
             myKeyboardScripts.Clear();
             myCollisionScripts.Clear();
         }
-
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return 1;
-        }
     }
 }
