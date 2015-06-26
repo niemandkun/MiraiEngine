@@ -23,9 +23,9 @@ namespace GenzaiProject
             var captionSprite = new Text(caption, ResourceManager.GetFont("BonvenoCF.otf"), (uint)(App.Window.Size.Y * 0.07));
             captionSprite.Position = new Vector2f(200, App.Window.Size.Y * 0.35f);
 
-            var text = currentSelection != 0 ? "...\n" : "\n";
+            var text = currentSelection != 0 ? "^\n" : "\n";
             text += menu[currentSelection];
-            text += currentSelection != menu.Length - 1 ? "\n..." : "\n";
+            text += currentSelection != menu.Length - 1 ? "\nv" : "\n";
             
             var textSprite = new Text(text, ResourceManager.GetFont("BonvenoCF.otf"), (uint)(App.Window.Size.Y * 0.03));
             textSprite.Position = new Vector2f(220, App.Window.Size.Y * 0.45f);
