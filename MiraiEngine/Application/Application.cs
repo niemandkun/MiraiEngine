@@ -19,7 +19,7 @@ namespace MiraiEngine
             Window.Closed += (sender, args) => Window.Close();
 
             appStates = new Stack<IApplicationState>();
-			appStates.Push(startState);
+            appStates.Push(startState);
             startState.App = this;
             startState.OnEnable();
         }
