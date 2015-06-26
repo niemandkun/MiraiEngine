@@ -5,14 +5,14 @@ using SFML.Window;
 
 namespace MiraiEngine
 {
-	public class Application
-	{
+    public class Application
+    {
         public RenderWindow Window { get; private set; }
         public ApplicationSettings Settings { get; private set; }
         private Stack<IApplicationState> appStates;
 
-		public Application(ApplicationSettings settings, IApplicationState startState)
-		{
+        public Application(ApplicationSettings settings, IApplicationState startState)
+        {
             Settings = settings;
 
             Window = CreateWindow(settings);
@@ -22,7 +22,7 @@ namespace MiraiEngine
 			appStates.Push(startState);
             startState.App = this;
             startState.OnEnable();
-		}
+        }
 
         private RenderWindow CreateWindow(ApplicationSettings settings)
         {
@@ -35,14 +35,14 @@ namespace MiraiEngine
             return window;
         }
 
-		public void Run()
-		{
+        public void Run()
+        {
             while (Window.IsOpen())
             {
                 appStates.Peek().OnMainLoop();
                 Window.DispatchEvents();
             }
-		}
+        }
         
         public void PushState(IApplicationState newState)
         {
@@ -66,5 +66,5 @@ namespace MiraiEngine
             appStates.Push(newState);
             newState.OnEnable();
         }
-	}
+    }
 }
