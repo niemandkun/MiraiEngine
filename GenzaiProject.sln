@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenzaiProject", "GenzaiProject\GenzaiProject.csproj", "{9DFD65FE-9ABA-4CB6-B541-FA419ED35D14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiraiEngine", "MiraiEngine\MiraiEngine.csproj", "{D52AE19F-D081-454A-87D6-34C7872F2203}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiraiEditor", "MiraiEditor\MiraiEditor.csproj", "{CB3EE923-682E-49DD-AEC4-E49CDEE4BF68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DFD65FE-9ABA-4CB6-B541-FA419ED35D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DFD65FE-9ABA-4CB6-B541-FA419ED35D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DFD65FE-9ABA-4CB6-B541-FA419ED35D14}.Debug|x86.ActiveCfg = Debug|x86
+		{9DFD65FE-9ABA-4CB6-B541-FA419ED35D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DFD65FE-9ABA-4CB6-B541-FA419ED35D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DFD65FE-9ABA-4CB6-B541-FA419ED35D14}.Release|x86.ActiveCfg = Release|x86
+		{9DFD65FE-9ABA-4CB6-B541-FA419ED35D14}.Release|x86.Build.0 = Release|x86
+		{D52AE19F-D081-454A-87D6-34C7872F2203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52AE19F-D081-454A-87D6-34C7872F2203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52AE19F-D081-454A-87D6-34C7872F2203}.Debug|x86.ActiveCfg = Debug|x86
+		{D52AE19F-D081-454A-87D6-34C7872F2203}.Debug|x86.Build.0 = Debug|x86
+		{D52AE19F-D081-454A-87D6-34C7872F2203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52AE19F-D081-454A-87D6-34C7872F2203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52AE19F-D081-454A-87D6-34C7872F2203}.Release|x86.ActiveCfg = Release|x86
+		{D52AE19F-D081-454A-87D6-34C7872F2203}.Release|x86.Build.0 = Release|x86
+		{CB3EE923-682E-49DD-AEC4-E49CDEE4BF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB3EE923-682E-49DD-AEC4-E49CDEE4BF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB3EE923-682E-49DD-AEC4-E49CDEE4BF68}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CB3EE923-682E-49DD-AEC4-E49CDEE4BF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB3EE923-682E-49DD-AEC4-E49CDEE4BF68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB3EE923-682E-49DD-AEC4-E49CDEE4BF68}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
